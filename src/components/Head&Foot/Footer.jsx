@@ -3,7 +3,7 @@
 const Footer = () => {
     return (
         <div className="h-60 ">
-            <footer className="px-4 pt-10  divide-y py-1 dark:bg-green-100 dark:text-gray-800">
+            <footer className="px-4 pt-10  divide-y py-1 dark:bg-stone-200 dark:text-gray-800">
                 <div className="mx-auto  max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 pb-8 border-b-2 border-gray-200">
                         <div className="flex flex-col gap-8 xl:gap-10 w-full lg:max-w-full mx-auto">

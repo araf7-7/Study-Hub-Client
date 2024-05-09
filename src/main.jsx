@@ -12,6 +12,9 @@ import FirebaseProvider from "./components/FirebaseProvider/FirebaseProvider";
 import Login from './components/Login';
 import Reg from './components/Reg';
 import { Toaster } from "sonner";
+import Assignments from './components/Assignments/Assignments';
+import CreateAssignments from './components/CreateAssignments/CreateAssignments';
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +32,21 @@ const router = createBrowserRouter([
           element: <Login></Login>,
         },
         {
+
           path: "/register",
           element: <Reg></Reg>,
+        },
+        {
+
+          path: "/assignment",
+          element: <Assignments></Assignments>,
+        },
+        {
+
+          path: "/CreateAssignment",
+          element: <PrivateRoute>
+            <CreateAssignments></CreateAssignments>
+          </PrivateRoute>,
         },
       ]
   },
@@ -39,7 +55,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <FirebaseProvider>
-    <Toaster position='top-center'></Toaster>
+      <Toaster position='top-center'></Toaster>
       <RouterProvider router={router} />
     </FirebaseProvider>
   </React.StrictMode>
