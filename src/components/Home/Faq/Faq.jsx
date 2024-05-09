@@ -2,13 +2,13 @@
 
 const Faq = () => {
     return (
-        <div className="my-10 container mx-auto text-3xl">
+        <div className="my-[200px] container mx-auto text-xl">
             <div>
-                <h1 className="text-4xl text-center mb-10">Frequently Asked Question</h1>
+                <h1 className="text-4xl  font-bold text-center mb-10">Frequently Asked Question</h1>
             </div>
-            <div className="collapse collapse-plus ">
+            <div className="collapse  collapse-plus ">
                 <input type="radio" name="my-accordion-3" defaultChecked />
-                <div className="collapse-title text-2xl font-medium">
+                <div className="collapse-title  text-2xl font-bold">
                     How can I access assignments on StudyHub?
                 </div>
                 <div className="collapse-content">
@@ -18,7 +18,7 @@ const Faq = () => {
             </div>
             <div className="collapse collapse-plus  ">
                 <input type="radio" name="my-accordion-3" />
-                <div className="collapse-title text-2xl font-medium">
+                <div className="collapse-title text-2xl font-bold">
                     Can I contribute my own assignments to StudyHub?
                 </div>
                 <div className="collapse-content">
@@ -28,7 +28,7 @@ const Faq = () => {
             </div>
             <div className="collapse collapse-plus  ">
                 <input type="radio" name="my-accordion-3" />
-                <div className="collapse-title text-2xl font-medium">
+                <div className="collapse-title text-2xl font-bold">
                     Are the assignments on StudyHub free to access?
                 </div>
                 <div className="collapse-content">
@@ -38,7 +38,7 @@ const Faq = () => {
             </div>
             <div className="collapse collapse-plus  ">
                 <input type="radio" name="my-accordion-3" />
-                <div className="collapse-title text-2xl font-medium">
+                <div className="collapse-title text-2xl font-bold">
                     How often are new assignments added to StudyHub?                </div>
                 <div className="collapse-content">
                     <p>We strive to regularly update our database with new assignments across various subjects and topics. While the frequency may vary, we aim to provide fresh content to our users on a consistent basis.
