@@ -1,10 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 // import AssignmentCard from "../Home/AssignmentCard/AssignmentCard";
 import AllAssignmentsCard from "./AllAssignmentsCard";
+import { useState } from "react";
 
 
 const Assignments = () => {
-    const assignments = useLoaderData();
+    const loadedAssignments = useLoaderData();
+    const [assignments , setAssignments] =useState(loadedAssignments)
     return (
         <div>
             <div>
@@ -14,7 +16,8 @@ const Assignments = () => {
 
                 {
                     assignments?.map(assignment =>
-                        <AllAssignmentsCard key={assignment._id} assignment={assignment}>
+                        <AllAssignmentsCard key={assignment._id} assignment={assignment} assignments={assignments} setAssignments={setAssignments}>
+                            
                         </AllAssignmentsCard>
                     )
                 }

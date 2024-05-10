@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const AllAssignmentsCard = ({ assignment }) => {
+const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
     
     const { _id, img, name, description, marks, option } = assignment || {}
     const handleDelete = _id => {
@@ -37,6 +37,8 @@ const AllAssignmentsCard = ({ assignment }) => {
                                 text: "Assignments has been deleted.",
                                 icon: "success"
                             });
+                            const remaining = assignments.filter(ass => ass._id !== _id)
+                            setAssignments(remaining)
                         }
                     })
             }
