@@ -1,5 +1,7 @@
 
 import { useCallback, useEffect, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
+import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {
     const [currentSlider, setCurrentSlider] = useState(0);
@@ -18,13 +20,28 @@ const Banner = () => {
     return (
         <div className=" container mx-auto  p-10  rounded-lg">
             <div className="">
-           
+
                 <div className="  md:w-auto col-span-2 lg:col-span-1 items-center content-center">
                     <div className="lg:pl-4">
-                        <p className="font-bold text-3xl text-center">Welcome To StudyHub</p>
-                        <p className='md:text-2xl text-base p-4 md:mt-5'>StudyHub is your ultimate destination for academic excellence. With StudyHub, students can access a vast repository of assignments spanning various subjects and difficulty levels, empowering them.</p>
-                        
-                       
+                        <p className="font-bold text-xl text-center"><TypeAnimation
+                            sequence={[
+                                // Same substring at the start will only be typed once, initially
+                                'Welcome',
+                                1000,
+                                'Welcome To ',
+                                2000,
+                                'Welcome To Study Hub ',
+                                3000,
+                            ]}
+                            speed={50}
+                            style={{ fontSize: '2em' }}
+                            repeat={Infinity}
+                        /></p>
+                        <Fade>
+                            <p className='md:text-2xl text-base p-4 md:mt-5'>StudyHub is your ultimate destination for academic excellence. With StudyHub, students can access a vast repository of assignments spanning various subjects and difficulty levels, empowering them.</p>
+                        </Fade>
+
+
                     </div>
                 </div>
             </div>
@@ -50,7 +67,7 @@ const Banner = () => {
                         <img key={slide} src={slide} className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[540px] object-cover" alt={`Slider - ${inx + 1}`} />
                     ))}
                 </div>
-                
+
             </div>
         </div>
     );

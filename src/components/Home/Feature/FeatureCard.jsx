@@ -7,6 +7,7 @@ import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
+
 const FeatureCard = () => {
     useEffect(() => {
         Aos.init({ duration: 2500 })
