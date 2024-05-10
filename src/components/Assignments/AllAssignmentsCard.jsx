@@ -1,9 +1,12 @@
 import { FaLocationArrow } from "react-icons/fa";
 import { GrUpdate } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+
 const AllAssignmentsCard = ({ assignment }) => {
+    
     const { _id, img, name, description, marks, option } = assignment || {}
     const handleDelete = _id => {
         console.log(_id);
@@ -59,7 +62,7 @@ const AllAssignmentsCard = ({ assignment }) => {
                     {/* Price and action button */}
                     <div className="mt-5  flex items-center justify-between">
                         <h2 className="font-medium  md:text-xl ">Difficulty : {option}</h2>
-                        <button className="btn btn-ghost bg-green-400 text-black hover:bg-teal-100"><GrUpdate className="text-2xl" /></button>
+                      <Link to={`/updateAssignment/${_id}`}>  <button className="btn btn-ghost bg-green-400 text-black hover:bg-teal-100"><GrUpdate className="text-2xl" /></button></Link>
                     </div>
 
                     <button className="btn btn-block bg-green-400 hover:bg-green-500">View Details <FaLocationArrow className="text-xl text-black" /></button>

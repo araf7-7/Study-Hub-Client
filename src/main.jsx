@@ -16,6 +16,8 @@ import Assignments from './components/Assignments/Assignments';
 import CreateAssignments from './components/CreateAssignments/CreateAssignments';
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
+import Update from "./components/UpdateAssignments/Update";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
           element: <PrivateRoute>
             <CreateAssignments></CreateAssignments>
           </PrivateRoute>,
+        },
+        {
+
+          path: "/updateAssignment/:id",
+          element: <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>,
+           loader: ({params}) => fetch(`http://localhost:5000/assignmentsCreate/${params.id}`)
         },
       ]
   },
