@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 
 const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
-    
+
     const { _id, img, name, description, marks, option } = assignment || {}
     const handleDelete = _id => {
         console.log(_id);
@@ -64,10 +64,12 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
                     {/* Price and action button */}
                     <div className="mt-5  flex items-center justify-between">
                         <h2 className="font-medium  md:text-xl ">Difficulty : {option}</h2>
-                      <Link to={`/updateAssignment/${_id}`}>  <button className="btn btn-ghost bg-green-400 text-black hover:bg-teal-100"><GrUpdate className="text-2xl" /></button></Link>
+                        <Link to={`/updateAssignment/${_id}`}>  <button className="btn btn-ghost bg-green-400 text-black hover:bg-teal-100"><GrUpdate className="text-2xl" /></button></Link>
                     </div>
 
-                    <button className="btn btn-block bg-green-400 hover:bg-green-500">View Details <FaLocationArrow className="text-xl text-black" /></button>
+                    <Link to={`/viewAssignment/${_id}`}>
+                        <button className="btn btn-block bg-green-400 mt-4 hover:bg-green-500">View Details <FaLocationArrow className="text-xl text-black" /></button>
+                    </Link>
                     <div className="flex justify-between">
                         <button onClick={() => handleDelete(_id)} className="btn btn-block bg-green-400 text-black hover:bg-red-700"><MdDeleteForever className="text-2xl text-white" /></button>
 

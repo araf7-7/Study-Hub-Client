@@ -30,7 +30,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className="navbar text-black">
+            <div className="navbar text-black font-abc">
                 <div className="navbar-start gap-14 lg:gap-0">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

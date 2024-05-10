@@ -1,0 +1,65 @@
+import {  useLoaderData, useParams } from "react-router-dom";
+import { toast } from "sonner";
+
+
+
+
+const TakeAssignment = () => {
+    const assignment = useLoaderData();
+    const { id } = useParams();
+    const assignments = assignment.find(assignment => assignment._id === id);
+    console.log(assignments);
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const doc = form.doc.value;
+        const note = form.note.value;
+        const submitAssignment = { doc, note };
+
+
+        fetch('http://localhost:5000/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(submitAssignment)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                   toast.success('Assignment Submit Done')
+                  
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting assignment:', error);
+                // Handle error, e.g., display an error message to the user
+            });
+    }
+    return (
+
+        <div>
+            <div className="max-[350px] mx-auto space-y-6 rounded-2xl bg-slate-100/70 px-6 py-4 shadow-md  text-black md:w-[350px]">
+
+                <form onSubmit={handleSubmit}>
+                    <div className="space-y-2">
+                        <h2 className="font-medium text-center text-slate-800 sm:text-lg md:text-xl ">{assignments.name}</h2>
+                        <h2 className="font-medium text-center text-slate-800 sm:text-lg md:text-xl ">Marks: {assignments.marks}</h2>
+                        <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Submit Your Pdf/Doc Link</h1>
+                        <input type="text" id="doc" placeholder="Submit here" className="input input-bordered input-md w-full max-w-xs" />
+                        <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Notes</h1>
+                        <textarea id="note" className="textarea w-full textarea-bordered" placeholder="Bio"></textarea>
+                        <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-green-500 focus:dark:ring-green-500 hover:dark:ring-green-500 dark:text-gray-50">Submit Assignment </button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    );
+};
+
+export default TakeAssignment;
