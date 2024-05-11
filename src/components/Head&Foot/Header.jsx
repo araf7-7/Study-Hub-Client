@@ -55,19 +55,26 @@ const Header = () => {
                                 Home <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
                             </li>
                         </NavLink>
-                        <Link to='/assignment'>
-                            <li className="group flex  cursor-pointer flex-col">
-                                Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
-                            </li>
-                        </Link>
-                        <Link to='/CreateAssignment'>
-                            <li className="group flex  cursor-pointer flex-col">
-                                Create Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
-                            </li>
-                        </Link>
-                        <li className="group flex  cursor-pointer flex-col">
-                            Contact  <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
-                        </li>
+                        {user ? (
+                            <>
+                            <Link to='/assignment'>
+                                <li className="group flex  cursor-pointer flex-col">
+                                    Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                                </li>
+                            </Link>
+                            <Link to='/CreateAssignment'>
+                                    <li className="group flex  cursor-pointer flex-col">
+                                        Create Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                                    </li>
+                                </Link>
+                                <li className="group flex  cursor-pointer flex-col">
+                                    Pending Assignments  <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                                </li></>
+                        )
+                            : (
+                                ''
+                            )
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
@@ -92,9 +99,7 @@ const Header = () => {
                                                 <span>{user?.displayName?.charAt(0)}</span>
                                             )}
                                             <ul tabIndex={0} className="menu  menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-base-100 rounded-box w-52">
-                                                <li><a>Item 1</a></li>
-                                                <li><a>Item 2</a></li>
-
+                                                <li className="group flex  cursor-pointer flex-col">My Attempted Assignment<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span> </li>
                                             </ul>
                                         </div>
 

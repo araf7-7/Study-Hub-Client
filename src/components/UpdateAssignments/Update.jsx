@@ -2,7 +2,7 @@
 import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
 // import Select from 'react-select'
-import {  useLoaderData } from "react-router-dom";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 // const options = [
 //     { value: 'easy', label: 'Easy' },
 //     { value: 'medium', label: 'Medium' },
@@ -11,6 +11,7 @@ import {  useLoaderData } from "react-router-dom";
 
 
 const Update = () => {
+    const navigate = useNavigate();
     const assignment = useLoaderData()
     const { _id, img, name, description, marks, date } = assignment || {}
     const handleUpdateAssignment = event => {
@@ -42,6 +43,7 @@ const Update = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
+                    navigate('/assignment')
                     
                 }
             })

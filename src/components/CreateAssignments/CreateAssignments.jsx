@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select'
+import { useNavigate } from "react-router-dom";
 const options = [
     { value: 'easy', label: 'Easy' },
     { value: 'medium', label: 'Medium' },
@@ -11,6 +12,7 @@ const options = [
 ]
 
 const CreateAssignments = () => {
+    const navigate = useNavigate();
     const handleAddAssignment = event => {
         event.preventDefault();
 
@@ -41,6 +43,7 @@ const CreateAssignments = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                navigate('/assignment')
             }
         })
             

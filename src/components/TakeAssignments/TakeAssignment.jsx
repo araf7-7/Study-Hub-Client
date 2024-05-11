@@ -1,23 +1,32 @@
-import {  useLoaderData, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
+
+import { AuthContext } from "../FirebaseProvider/FirebaseProvider";
 
 
 
 
 const TakeAssignment = () => {
+    const navigate = useNavigate();
+    const { user } = useContext(AuthContext)
     const assignment = useLoaderData();
     const { id } = useParams();
     const assignments = assignment.find(assignment => assignment._id === id);
     console.log(assignments);
 
     const handleSubmit = event => {
+
         event.preventDefault();
 
         const form = event.target;
         const doc = form.doc.value;
         const note = form.note.value;
-        const submitAssignment = { doc, note };
+        const name = user?.displayName
+        const email = user?.email
 
+        const submitAssignment = { doc, note, name, email, assignmentName:assignments.name, assignmentMark: assignments.marks };
+        console.log(submitAssignment)
 
         fetch('http://localhost:5000/submit', {
             method: 'POST',
@@ -29,9 +38,9 @@ const TakeAssignment = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.insertedId){
-                   toast.success('Assignment Submit Done')
-                  
+                if (data.insertedId) {
+                    toast.success('Assignment Submit Done')
+                    navigate('/assignment')
                 }
             })
             .catch(error => {
@@ -46,8 +55,12 @@ const TakeAssignment = () => {
 
                 <form onSubmit={handleSubmit}>
                     <div className="space-y-2">
-                        <h2 className="font-medium text-center text-slate-800 sm:text-lg md:text-xl ">{assignments.name}</h2>
+                        <h2 id='' className="font-medium text-center text-slate-800 sm:text-lg md:text-xl ">{assignments.name}</h2>
                         <h2 className="font-medium text-center text-slate-800 sm:text-lg md:text-xl ">Marks: {assignments.marks}</h2>
+                        <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Enter Your Name</h1>
+                        <input type="text" id="name" readOnly defaultValue={user?.displayName} placeholder="Enter Your Name" className="input input-bordered input-md w-full max-w-xs" />
+                        <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Enter Your Email</h1>
+                        <input type="email" readOnly defaultValue={user?.email} id="email" placeholder="Enter Your Email" className="input input-bordered input-md w-full max-w-xs" />
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Submit Your Pdf/Doc Link</h1>
                         <input type="text" id="doc" placeholder="Submit here" className="input input-bordered input-md w-full max-w-xs" />
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Notes</h1>

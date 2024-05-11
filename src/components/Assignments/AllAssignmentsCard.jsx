@@ -1,5 +1,5 @@
-import { FaLocationArrow } from "react-icons/fa";
-import { GrUpdate } from "react-icons/gr";
+
+import { GrUpdate, GrView } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -45,8 +45,8 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
         });
     }
     return (
-        <div>
-            <div>
+        <div className="my-10">
+            <div> 
                 <div className="w-auto  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-6 py-4 shadow-2xl  md:w-[350px]">
                     {/* Card Image */}
                     <img width={350} height={190} className="h-[190px] w-[350px] rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
@@ -64,14 +64,14 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
                     {/* Price and action button */}
                     <div className="mt-5  flex items-center justify-between">
                         <h2 className="font-medium  md:text-xl ">Difficulty : {option}</h2>
-                        <Link to={`/updateAssignment/${_id}`}>  <button className="btn btn-ghost bg-green-400 text-black hover:bg-teal-100"><GrUpdate className="text-2xl" /></button></Link>
+
                     </div>
 
-                    <Link to={`/viewAssignment/${_id}`}>
-                        <button className="btn btn-block bg-green-400 mt-4 hover:bg-green-500">View Details <FaLocationArrow className="text-xl text-black" /></button>
-                    </Link>
-                    <div className="flex justify-between">
-                        <button onClick={() => handleDelete(_id)} className="btn btn-block bg-green-400 text-black hover:bg-red-700"><MdDeleteForever className="text-2xl text-white" /></button>
+                    <div className="flex items-center justify-between">
+                        <Link to={`/viewAssignment/${_id}`}><button data-tip="View Assignment" className="btn tooltip  bg-orange-600 hover:bg-orange-400"><GrView className="text-xl text-black" /> </button>
+                        </Link>
+                        <Link to={`/updateAssignment/${_id}`}>  <button data-tip="Update" className="btn btn-ghost tooltip bg-green-400 text-black hover:bg-teal-100"><GrUpdate className="text-2xl" /></button></Link>
+                        <button onClick={() => handleDelete(_id)}  data-tip="Delete" className="btn  tooltip bg-red-500 text-black hover:bg-red-700"><MdDeleteForever className="text-2xl text-white" /></button>
 
                     </div>
 
