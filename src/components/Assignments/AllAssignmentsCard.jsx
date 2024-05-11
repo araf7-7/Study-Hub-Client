@@ -47,9 +47,9 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
     return (
         <div className="my-10">
             <div> 
-                <div className="w-auto  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-6 py-4 shadow-2xl  md:w-[350px]">
+                <div className="w-[4]  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-3 py-4 shadow-2xl ">
                     {/* Card Image */}
-                    <img width={350} height={190} className="h-[190px] w-[350px] rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
+                    <img width={350} height={190} className="h-[190px] w-[350px]  container mx-auto rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
                     {/* Card Heading */}
                     <div>
 
