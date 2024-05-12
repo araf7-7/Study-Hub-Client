@@ -19,6 +19,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Update from "./components/UpdateAssignments/Update";
 import ViewAssignments from "./components/ViewAssignments/ViewAssignments";
 import TakeAssignment from "./components/TakeAssignments/TakeAssignment";
+import MyAssignment from "./components/MyAssignments/MyAssignment";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,13 @@ const router = createBrowserRouter([
           path: "/CreateAssignment",
           element: <PrivateRoute>
             <CreateAssignments></CreateAssignments>
+          </PrivateRoute>,
+        },
+        {
+
+          path: "/MyAssignment",
+          element: <PrivateRoute>
+          <MyAssignment></MyAssignment>
           </PrivateRoute>,
         },
         {

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
+import validUrl from "valid-url";
 
 import { AuthContext } from "../FirebaseProvider/FirebaseProvider";
 
@@ -14,6 +15,7 @@ const TakeAssignment = () => {
     const { id } = useParams();
     const assignments = assignment.find(assignment => assignment._id === id);
     console.log(assignments);
+    
 
     const handleSubmit = event => {
 
@@ -24,10 +26,24 @@ const TakeAssignment = () => {
         const note = form.note.value;
         const name = user?.displayName
         const email = user?.email
+        const today = new Date()
+        const day = today.getDate()
+        const month = today.getMonth()
+        const year = today.getFullYear()
+        const date = `${year}/${month}/${day}`
+        const urlPattern = /^(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9.-]+(\.[a-zA-Z]{2,}){1,2}(\/\S*)?$/;
+        if (!urlPattern.test(doc)) {
+            return toast.error("please enter a valid link")
+        }
 
-        const submitAssignment = { doc, note, name, email, assignmentName:assignments.name, assignmentMark: assignments.marks };
+        if (!validUrl.isUri(doc)) {
+            return toast.error("please give a valid url")
+        }
+
+
+        const submitAssignment = { status: 'Pending', obtainedMark: 0, doc, note, name, email, assignmentName: assignments.name, assignmentMark: assignments.marks, submittedOn: date,  };
         console.log(submitAssignment)
-
+       
         fetch('http://localhost:5000/submit', {
             method: 'POST',
             headers: {
@@ -39,7 +55,7 @@ const TakeAssignment = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    toast.success('Assignment Submit Done')
+                    toast.success('Assignment Submitted')
                     navigate('/assignment')
                 }
             })
@@ -62,7 +78,9 @@ const TakeAssignment = () => {
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Enter Your Email</h1>
                         <input type="email" readOnly defaultValue={user?.email} id="email" placeholder="Enter Your Email" className="input input-bordered input-md w-full max-w-xs" />
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Submit Your Pdf/Doc Link</h1>
-                        <input type="text" id="doc" placeholder="Submit here" className="input input-bordered input-md w-full max-w-xs" />
+                        <input  type="url" name="assignmentLink" id="doc" placeholder="Submit here" className="input input-bordered input-md w-full max-w-xs" />
+                        {/* <input type="url" name="assignmentLink" placeholder="PDF url" />
+                        <textarea  className="input input-bordered input-md w-full max-w-xs" name="SubmissionNote" placeholder="Submition note" /> */}
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Notes</h1>
                         <textarea id="note" className="textarea w-full textarea-bordered" placeholder="Bio"></textarea>
                         <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-green-500 focus:dark:ring-green-500 hover:dark:ring-green-500 dark:text-gray-50">Submit Assignment </button>

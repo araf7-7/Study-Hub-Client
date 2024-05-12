@@ -36,9 +36,22 @@ const Header = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52 font-semibold">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-white rounded-box w-52 font-semibold">
                             <NavLink to="/" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Home</NavLink>
-                            <NavLink to="/assignment" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Assignments</NavLink>
+                           
+                           {
+                            user ?(
+                                <> 
+                                <NavLink to="/assignment" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Assignments</NavLink>
+                                <NavLink to="/CreateAssignment" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg"> Create Assignments</NavLink>
+                                <NavLink to="/CreateAssignment" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg"> Pending Assignments</NavLink>
+                                </>
+                            ) : (
+                                <>
+                                <NavLink to="/login" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Login</NavLink>
+                                <NavLink to="/register" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Sign Up</NavLink></>
+                            )
+                           }
 
                         </ul>
                     </div>
@@ -99,7 +112,7 @@ const Header = () => {
                                                 <span>{user?.displayName?.charAt(0)}</span>
                                             )}
                                             <ul tabIndex={0} className="menu  menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-base-100 rounded-box w-52">
-                                                <li className="group flex  cursor-pointer flex-col">My Attempted Assignment<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span> </li>
+                                              <Link to='/MyAssignment'>  <li className="group flex  cursor-pointer flex-col">My Attempted Assignment<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span> </li></Link>
                                             </ul>
                                         </div>
 

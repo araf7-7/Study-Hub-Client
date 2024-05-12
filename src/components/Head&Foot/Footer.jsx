@@ -9,8 +9,8 @@ const Footer = () => {
                         <div className="flex flex-col gap-8 xl:gap-10 w-full lg:max-w-full mx-auto">
                             <div className="flex flex-col gap-8">
                                 <h2 className="font-manrope font-bold text-4xl leading-snug text-gray-900 max-[470px]:text-center">
-                                    Begin Your Project <br />
-                                    Journey!
+                                   Begin Your Study With <br />
+                                    StudyHub!
                                 </h2>
                                 <p className="text-base font-normal text-gray-500 max-[470px]:text-center">
                                     Take the First Step Towards Success!
@@ -163,7 +163,7 @@ const Footer = () => {
                         <div className="w-full lg:max-w-full mx-auto flex flex-col min-[470px]:flex-row justify-between gap-6 sm:gap-20 md:gap-10 xl:gap-24">
                             <div className="">
                                 <h6 className="text-lg font-medium text-gray-900 mb-7 max-[470px]:text-center">
-                                    Pagedone
+                                    Pages
                                 </h6>
                                 <ul className="flex flex-col max-[470px]:items-center max-[470px]:justify-center gap-6">
                                     <li>
@@ -179,7 +179,7 @@ const Footer = () => {
                                             href="javascript:;"
                                             className="text-base font-normal max-lg:text-center text-gray-600 whitespace-nowrap transition-all duration-300 hover:text-green-500 focus-within:outline-0 focus-within:text-green-500"
                                         >
-                                            About
+                                            Assignment
                                         </a>
                                     </li>
                                     <li>
@@ -187,7 +187,7 @@ const Footer = () => {
                                             href="javascript:;"
                                             className="text-base font-normal max-lg:text-center text-gray-600 whitespace-nowrap transition-all duration-300 hover:text-green-500 focus-within:outline-0 focus-within:text-green-500"
                                         >
-                                            Pricing
+                                            Create Assignment
                                         </a>
                                     </li>
                                     <li>
@@ -195,7 +195,7 @@ const Footer = () => {
                                             href="javascript:;"
                                             className="text-base font-normal max-lg:text-center text-gray-600 whitespace-nowrap transition-all duration-300 hover:text-green-500 focus-within:outline-0 focus-within:text-green-500"
                                         >
-                                            Pro Version
+                                           Pending Assignment
                                         </a>
                                     </li>
                                 </ul>
@@ -282,7 +282,7 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col-reverse gap-5 sm:flex-row items-center first-letter:items-center justify-between pt-7">
                         <p className="font-normal text-sm text-gray-500">
-                            ©<a href="https://pagedone.io/">pagedone</a>2023, All rights reserved.
+                            ©StudyHub 2024, All rights reserved.
                         </p>
                         <ul className="flex items-center gap-9">
                             <li>

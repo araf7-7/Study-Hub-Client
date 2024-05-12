@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select'
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const options = [
     { value: 'easy', label: 'Easy' },
     { value: 'medium', label: 'Medium' },
@@ -23,6 +24,7 @@ const CreateAssignments = () => {
         const img = form.img.value;
         const option = form.option.value;
         const date = form.date.value;
+    
         const newAssignment = { name, description, marks, img, option, date }
         console.log(newAssignment);
 
@@ -51,6 +53,9 @@ const CreateAssignments = () => {
     const [startDate, setStartDate] = useState(new Date());
     return (
         <div>
+              <Helmet>
+                    <title>Create Assignments</title>
+                </Helmet>
             <section className="p-6 dark:text-gray-800">
                 <form onSubmit={handleAddAssignment} noValidate="" className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow ">
                     <h2 className="w-full text-3xl font-bold leading-tight">Create An Assignment</h2>
