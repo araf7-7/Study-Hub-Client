@@ -5,6 +5,7 @@ import FeatureCard from "./Feature/FeatureCard";
 import AssignmentCard from "./AssignmentCard/AssignmentCard";
 import { TypeAnimation } from "react-type-animation";
 import { Helmet } from "react-helmet";
+import Footer from './../Head&Foot/Footer';
 
 
 const Home = () => {
@@ -41,8 +42,9 @@ const Home = () => {
       <Faq></Faq>
       <FeatureCard> </FeatureCard>
 
-
+      <Footer></Footer>
     </div>
+    
   );
 };
 

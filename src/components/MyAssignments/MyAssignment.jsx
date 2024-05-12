@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import UseAuth from "../UseAuth";
 import MyAssignmentCard from "./MyAssignmentCard";
-
+import Footer from '../Head&Foot/Footer'
 const MyAssignment = () => {
   const { user } = UseAuth();
   const [assignments, setAssignments] = useState([]);
@@ -17,8 +17,11 @@ const MyAssignment = () => {
 
   return (
     <div>
+      <div className="text-4xl text-center font-bold">
+        My Assignments
+      </div>
       {assignments.length > 0 ? (
-        <div className="bg-green-200 py-10">
+        <div className=" py-10">
           <div className="grid grid-cols-3 gap-10">
             {assignments.map((assignment) => (
               <MyAssignmentCard
@@ -37,7 +40,9 @@ const MyAssignment = () => {
          
         </div>
       )}
+      <Footer></Footer>
     </div>
+    
   );
 };
 

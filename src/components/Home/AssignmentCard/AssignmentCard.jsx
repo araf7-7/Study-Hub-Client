@@ -3,10 +3,10 @@ const AssignmentCard = ({ assignment }) => {
     const { img, name, description, marks, option } = assignment
     return (
         
-        <div>
-            <div className="w-[400px] lg:w-auto h-[500px] text-black mx-auto space-y-6 rounded-2xl bg-green-100   px-6 py-4 shadow-2xl ">
+        <div className="">
+            <div className="w-[400px] cursor-pointer   lg:w-auto h-[500px] text-black mx-auto space-y-6 rounded-2xl bg-green-100   px-6 py-4 shadow-2xl ">
                 {/* Card Image */}
-                <img width={350} height={190} className="h-[190px] w-[350px] rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
+                <img width={350}  height={190} className=" h-[190px] w-[350px] rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
                 {/* Card Heading */}
                 <div>
 
@@ -19,7 +19,7 @@ const AssignmentCard = ({ assignment }) => {
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex  justify-between">
                         <h2 className="font-medium  sm:text-lg md:text-xl ">{name}</h2>
                         <h2 className="font-bold rounded-lg p-1 bg-green-500">Marks : {marks}</h2>
                     </div>
