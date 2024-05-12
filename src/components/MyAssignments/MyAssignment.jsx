@@ -22,7 +22,7 @@ const MyAssignment = () => {
       </div>
       {assignments.length > 0 ? (
         <div className=" py-10">
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid  gap-10">
             {assignments.map((assignment) => (
               <MyAssignmentCard
                 key={assignment.email}
