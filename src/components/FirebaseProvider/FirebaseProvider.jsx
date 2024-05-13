@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, updateProfile, GithubAuthProvider } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 // import auth from "../Firebase/firebase.config";
 // import auth from './../firebase/firebase.config';
@@ -7,7 +7,7 @@ import axios from "axios";
 
 export const AuthContext = createContext(null)
 const googleProvider = new GoogleAuthProvider()
-// const gitHubProvider = new GithubAuthProvider()
+const gitHubProvider = new GithubAuthProvider()
 const FirebaseProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -37,10 +37,10 @@ const FirebaseProvider = ({ children }) => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
-    // const gitHubLogin = () => {
-    //     setLoading(true)
-    //     return signInWithPopup(auth, gitHubProvider)
-    // }
+    const gitHubLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, gitHubProvider)
+    }
     const logout = () => {
         setUser(null)
         signOut(auth)
@@ -52,12 +52,12 @@ const FirebaseProvider = ({ children }) => {
                 setUser(user)
             }
             setLoading(false)
-            if(user){
-                const loggedUser = {email : user.email}
-                axios.post( 'http://localhost:5000/jwt', loggedUser, {withCredentials: true})
-                .then(res=>{
-                    console.log('token response',res.data);
-                })
+            if (user) {
+                const loggedUser = { email: user.email }
+                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log('token response', res.data);
+                    })
             }
 
         });
@@ -68,7 +68,7 @@ const FirebaseProvider = ({ children }) => {
         createUser,
         signInUser,
         googleLogin,
-
+        gitHubLogin,
         logout,
         user,
         setUser,
