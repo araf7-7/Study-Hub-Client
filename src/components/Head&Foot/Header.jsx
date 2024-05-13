@@ -29,29 +29,29 @@ const Header = () => {
     };
 
     return (
-        <div>
-            <div className="navbar text-black font-abc">
+        <div className="bg-indigo-800">
+            <div className="navbar  text-white font-abc">
                 <div className="navbar-start gap-14 lg:gap-0">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-white rounded-box w-52 font-semibold">
-                            <NavLink to="/" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Home</NavLink>
-                           
-                           {
-                            user ?(
-                                <> 
-                                <NavLink to="/assignment" className="hover:text-green-500 hover:border-2  hover:border-green-500 p-2 rounded-lg">Assignments</NavLink>
-                                <NavLink to="/CreateAssignment" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg"> Create Assignments</NavLink>
-                                <NavLink to="/SubmittedAssignment" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg"> Pending Assignments</NavLink>
-                                </>
-                            ) : (
-                                <>
-                                <NavLink to="/login" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Login</NavLink>
-                                <NavLink to="/register" className="hover:text-green-500 hover:border-2 hover:border-green-500 p-2 rounded-lg">Sign Up</NavLink></>
-                            )
-                           }
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-indigo-400 rounded-box w-52 font-semibold">
+                            <NavLink to="/" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700 p-2 rounded-lg">Home</NavLink>
+
+                            {
+                                user ? (
+                                    <>
+                                        <NavLink to="/assignment" className="hover:text-indigo-700  hover:border-2  hover:border-indigo-700 p-2 rounded-lg">Assignments</NavLink>
+                                        <NavLink to="/CreateAssignment" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700 p-2 rounded-lg"> Create Assignments</NavLink>
+                                        <NavLink to="/SubmittedAssignment" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700 p-2 rounded-lg"> Pending Assignments</NavLink>
+                                    </>
+                                ) : (
+                                    <>
+                                        <NavLink to="/login" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700 p-2 rounded-lg">Login</NavLink>
+                                        <NavLink to="/register" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700  p-2 rounded-lg">Sign Up</NavLink></>
+                                )
+                            }
 
                         </ul>
                     </div>
@@ -61,27 +61,27 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center  hidden lg:flex">
                     <ul className="flex items-center justify-between gap-10">
                         <NavLink to='/'>
                             <li className="group flex  cursor-pointer flex-col">
-                                Home <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                                Home <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
                             </li>
                         </NavLink>
                         {user ? (
                             <>
-                            <Link to='/assignment'>
-                                <li className="group flex  cursor-pointer flex-col">
-                                    Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
-                                </li>
-                            </Link>
-                            <Link to='/CreateAssignment'>
+                                <Link to='/assignment'>
+                                    <li className="group flex  cursor-pointer flex-col">
+                                        Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
+                                    </li>
+                                </Link>
+                                <Link to='/CreateAssignment'>
                                     <li className="group flex   cursor-pointer flex-col">
-                                        Create Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                                        Create Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
                                     </li>
                                 </Link>
                                 <Link to='/SubmittedAssignment'><li className="group flex  cursor-pointer flex-col">
-                                    Pending Assignments  <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                                    Pending Assignments  <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
                                 </li></Link></>
                         )
                             : (
@@ -112,7 +112,7 @@ const Header = () => {
                                                 <span>{user?.displayName?.charAt(0)}</span>
                                             )}
                                             <ul tabIndex={0} className="menu  menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-base-100 rounded-box w-52">
-                                              <Link to='/MyAssignment'>  <li className="group flex  cursor-pointer flex-col">My Attempted Assignment<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-green-500 transition-all duration-300 group-hover:w-full"></span> </li></Link>
+                                                <Link to='/MyAssignment'>  <li className="group flex  cursor-pointer text-black flex-col">My Attempted Assignment<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-indigo-500 transition-all duration-300 group-hover:w-full"></span> </li></Link>
                                             </ul>
                                         </div>
 
@@ -120,11 +120,11 @@ const Header = () => {
 
 
                                 </div>
-                                <button className="btn btn-ghost  rounded-xl  px-6 py-2  text-black bg-green-500 hover:bg-green-600" onClick={handleLogout}>Logout</button>
+                                <button className="btn btn-ghost  rounded-xl  px-6 py-2  text-black bg-indigo-300 hover:bg-indigo-500" onClick={handleLogout}>Logout</button>
                             </div>
                         ) : (
-                            <><NavLink to="/login"><button className="self-center mx-2 btn btn-ghost hidden rounded-xl  px-8 py-3  text-black bg-green-300 hover:bg-green-600 lg:flex">Login</button></NavLink>
-                                <NavLink to="/register"><button className="self-center px-8 hidden py-3 btn btn-ghost  rounded-xl   text-black bg-green-300 hover:bg-green-600 lg:flex `">Register</button></NavLink></>
+                            <><NavLink to="/login"><button className="self-center mx-2 btn btn-ghost hidden rounded-xl  px-8 py-3  text-black bg-indigo-300 hover:bg-indigo-500 lg:flex">Login</button></NavLink>
+                                <NavLink to="/register"><button className="self-center px-8 hidden py-3 btn btn-ghost  rounded-xl   text-black bg-indigo-300 hover:bg-indigo-500 lg:flex `">Register</button></NavLink></>
                         )}
 
                     </div>

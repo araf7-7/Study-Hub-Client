@@ -24,7 +24,7 @@ const CreateAssignments = () => {
         const img = form.img.value;
         const option = form.option.value;
         const date = form.date.value;
-    
+
         const newAssignment = { name, description, marks, img, option, date }
         console.log(newAssignment);
 
@@ -35,27 +35,27 @@ const CreateAssignments = () => {
             },
             body: JSON.stringify(newAssignment),
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Assignment Added Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                })
-                navigate('/assignment')
-            }
-        })
-            
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Assignment Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    navigate('/assignment')
+                }
+            })
+
     }
     const [startDate, setStartDate] = useState(new Date());
     return (
         <div>
-              <Helmet>
-                    <title>Create Assignments</title>
-                </Helmet>
+            <Helmet>
+                <title>Create Assignments</title>
+            </Helmet>
             <section className="p-6 dark:text-gray-800">
                 <form onSubmit={handleAddAssignment} noValidate="" className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow ">
                     <h2 className="w-full text-3xl font-bold leading-tight">Create An Assignment</h2>

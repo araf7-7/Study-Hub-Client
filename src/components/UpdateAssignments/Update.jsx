@@ -2,7 +2,7 @@
 import Swal from "sweetalert2";
 import "react-datepicker/dist/react-datepicker.css";
 // import Select from 'react-select'
-import {  useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 // const options = [
 //     { value: 'easy', label: 'Easy' },
 //     { value: 'medium', label: 'Medium' },
@@ -36,7 +36,7 @@ const Update = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    
+
                     Swal.fire({
                         title: 'Success!',
                         text: 'Assignment Updated Successfully',
@@ -44,7 +44,7 @@ const Update = () => {
                         confirmButtonText: 'Cool'
                     })
                     navigate('/assignment')
-                    
+
                 }
             })
 

@@ -15,7 +15,7 @@ const TakeAssignment = () => {
     const { id } = useParams();
     const assignments = assignment.find(assignment => assignment._id === id);
     console.log(assignments);
-    
+
 
     const handleSubmit = event => {
 
@@ -41,9 +41,9 @@ const TakeAssignment = () => {
         }
 
 
-        const submitAssignment = { status: 'Pending', obtainedMark: 0, doc, note, name, email, assignmentName: assignments.name, assignmentMark: assignments.marks, submittedOn: date,  };
+        const submitAssignment = { status: 'Pending', feedback: '', obtainedMark: 0, doc, note, name, email, assignmentName: assignments.name, assignmentMark: assignments.marks, submittedOn: date, };
         console.log(submitAssignment)
-       
+
         fetch('http://localhost:5000/submit', {
             method: 'POST',
             headers: {
@@ -78,7 +78,7 @@ const TakeAssignment = () => {
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Enter Your Email</h1>
                         <input type="email" readOnly defaultValue={user?.email} id="email" placeholder="Enter Your Email" className="input input-bordered input-md w-full max-w-xs" />
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Submit Your Pdf/Doc Link</h1>
-                        <input  type="url" name="assignmentLink" id="doc" placeholder="Submit here" className="input input-bordered input-md w-full max-w-xs" />
+                        <input type="url" name="assignmentLink" id="doc" placeholder="Submit here" className="input input-bordered input-md w-full max-w-xs" />
                         {/* <input type="url" name="assignmentLink" placeholder="PDF url" />
                         <textarea  className="input input-bordered input-md w-full max-w-xs" name="SubmissionNote" placeholder="Submition note" /> */}
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Notes</h1>

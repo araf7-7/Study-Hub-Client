@@ -16,9 +16,9 @@ const Error = () => {
     const error = useRouteError();
     return (
         <div className="text-center mt-[100px] mb-20">
-                <Helmet>
-                    <title>Error</title>
-                </Helmet>
+            <Helmet>
+                <title>Error</title>
+            </Helmet>
             <p className="text-4xl">{error.statusText || error.message}</p>
             {
                 error.status === 404 && <div>

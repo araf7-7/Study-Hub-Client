@@ -46,7 +46,7 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
     }
     return (
         <div className="my-10 ">
-            <div> 
+            <div>
                 <div className="lg:w-auto w-[400px]  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-3 py-4 shadow-2xl ">
                     {/* Card Image */}
                     <img width={350} height={190} className="h-[190px] w-[350px]  container mx-auto rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
@@ -71,7 +71,7 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
                         <Link to={`/viewAssignment/${_id}`}><button data-tip="View Assignment" className="btn tooltip  bg-orange-600 hover:bg-orange-400"><GrView className="text-xl text-black" /> </button>
                         </Link>
                         <Link to={`/updateAssignment/${_id}`}>  <button data-tip="Update" className="btn btn-ghost tooltip bg-green-400 text-black hover:bg-teal-100"><GrUpdate className="text-2xl" /></button></Link>
-                        <button onClick={() => handleDelete(_id)}  data-tip="Delete" className="btn  tooltip bg-red-500 text-black hover:bg-red-700"><MdDeleteForever className="text-2xl text-white" /></button>
+                        <button onClick={() => handleDelete(_id)} data-tip="Delete" className="btn  tooltip bg-red-500 text-black hover:bg-red-700"><MdDeleteForever className="text-2xl text-white" /></button>
 
                     </div>
 

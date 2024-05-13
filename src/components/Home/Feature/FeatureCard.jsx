@@ -31,7 +31,7 @@ const FeatureCard = () => {
                 </h1>
             </div>
             <div data-aos="fade-right" className="">
-                <div className="flex p-10">
+                <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4">
                     <div className="mx-auto max-w-[350px] space-y-4 rounded-lg  bg-teal-200 p-6 shadow-lg md:w-[350px]  text-black">
                         <ImBooks className="text-5xl" />
                         <div className="grid gap-2">
@@ -63,7 +63,7 @@ const FeatureCard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex p-10">
+                <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 ">
                     <div className="mx-auto max-w-[350px] space-y-4 rounded-lg  bg-red-100 p-6 shadow-lg md:w-[350px]  text-black">
                         <MdPersonSearch className="text-5xl" />
                         <div className="grid gap-2">

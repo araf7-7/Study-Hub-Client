@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import UseAuth from './UseAuth';
 import Lottie from "lottie-react";
 import Typing from "./Typing.json";
+import Footer from './Head&Foot/Footer';
 
 
 const Reg = () => {
@@ -74,7 +75,7 @@ const Reg = () => {
 
     return (
         <>
-            <div className='flex container mx-auto gap-10 my-3 bg-green-100 px-4 rounded-lg'>
+            <div className='flex container mx-auto gap-10 my-3 bg-indigo-100 px-4 rounded-lg'>
                 <div className=" flex-1 w-full mx-auto my-10 max-w-md p-8 space-y-3 rounded-xl  dark:text-gray-800">
                     <Helmet>
                         <title>Register</title>
@@ -103,14 +104,15 @@ const Reg = () => {
                             {errors.password && <span className='text-red-600'>This field is required</span>}
                         </div>
 
-                        <button className="block w-full p-3 text-center  dark:text-gray-50 rounded-lg dark:bg-green-500">Sign Up</button>
+                        <button className="block w-full p-3 text-center  dark:text-gray-50 rounded-lg dark:bg-indigo-500">Sign Up</button>
                     </form>
                 </div>
                 <div className="flex-auto  justify-center my-auto  text-center hidden lg:flex">
-                <Lottie animationData={Typing} />
+                    <Lottie animationData={Typing} />
                 </div>
 
             </div>
+            <Footer></Footer>
         </>
     );
 };
