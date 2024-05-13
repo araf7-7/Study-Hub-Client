@@ -56,24 +56,24 @@ const CreateAssignments = () => {
             <Helmet>
                 <title>Create Assignments</title>
             </Helmet>
-            <section className="p-6 dark:text-gray-800">
-                <form onSubmit={handleAddAssignment} noValidate="" className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow ">
+            <section className="p-6 bg-indigo-100/70 dark:text-gray-800">
+                <form onSubmit={handleAddAssignment} noValidate="" className="container bg-indigo-300/90 w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow ">
                     <h2 className="w-full text-3xl font-bold leading-tight">Create An Assignment</h2>
                     <div>
                         <label htmlFor="name" className="block mb-1 ml-1 custom-cursor-default-hover">Title</label>
-                        <input id="name" type="text" placeholder="Title" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-green-500 dark:bg-gray-100" />
+                        <input id="name" type="text" placeholder="Title" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-indigo-500 dark:bg-gray-100" />
                     </div>
                     <div>
                         <label htmlFor="name" className="block mb-1 ml-1 custom-cursor-default-hover">Description</label>
-                        <input id="description" type="text" placeholder="Description" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-green-500 dark:bg-gray-100" />
+                        <input id="description" type="text" placeholder="Description" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-indigo-500 dark:bg-gray-100" />
                     </div>
                     <div>
                         <label htmlFor="name" className="block mb-1 ml-1 custom-cursor-default-hover">Marks</label>
-                        <input id="marks" type="number" placeholder="Marks" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-green-500 dark:bg-gray-100" />
+                        <input id="marks" type="number" placeholder="Marks" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-indigo-500 dark:bg-gray-100" />
                     </div>
                     <div >
                         <label htmlFor="img" className=" block mb-1 ml-1 custom-cursor-default-hover">Image URL</label>
-                        <input type="img" name="image" id="img" placeholder="Image Url" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-green-500 dark:bg-gray-100" />
+                        <input type="img" name="image" id="img" placeholder="Image Url" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-indigo-500 dark:bg-gray-100" />
                     </div>
 
                     <div>
@@ -89,7 +89,7 @@ const CreateAssignments = () => {
                         </div>
                     </div>
                     <div>
-                        <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-green-500 focus:dark:ring-green-500 hover:dark:ring-green-500 dark:text-gray-50">Submit Assignment </button>
+                        <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-indigo-500 focus:dark:ring-indigo-500 hover:dark:ring-indigo-500 dark:text-gray-50">Submit Assignment </button>
                     </div>
 
                 </form>

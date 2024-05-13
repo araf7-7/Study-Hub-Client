@@ -30,7 +30,7 @@ const ViewAssignments = () => {
 
                         <p className="text-xl "><span className="font-medium">Difficulty:</span> {assignments.option}</p>
                         <p className="text-xl "><span className="font-medium">Date:</span> {assignments.date}</p>
-                        <Link to={`/TakeAssignment/${id}`}><button className="btn text-black hover:bg-green-700 bg-green-500 btn-block">Take Assignments <FaPenAlt className="text-xl" /></button></Link>
+                        <Link to={`/TakeAssignment/${id}`}><button className="btn text-black hover:bg-indigo-700 bg-indigo-500 btn-block">Take Assignments <FaPenAlt className="text-xl" /></button></Link>
                     </div>
                 </div>
             </div>

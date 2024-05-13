@@ -67,7 +67,7 @@ const TakeAssignment = () => {
     return (
 
         <div>
-            <div className="max-[350px] mx-auto space-y-6 rounded-2xl bg-slate-100/70 px-6 py-4 shadow-md  text-black md:w-[350px]">
+            <div className="max-[350px] my-4 mx-auto space-y-6 rounded-2xl bg-indigo-100/70 px-6 py-4 shadow-md  text-black md:w-[350px]">
 
                 <form onSubmit={handleSubmit}>
                     <div className="space-y-2">
@@ -83,7 +83,7 @@ const TakeAssignment = () => {
                         <textarea  className="input input-bordered input-md w-full max-w-xs" name="SubmissionNote" placeholder="Submition note" /> */}
                         <h1 className="font-medium  text-slate-800 sm:text-lg md:text-xl">Notes</h1>
                         <textarea id="note" className="textarea w-full textarea-bordered" placeholder="Bio"></textarea>
-                        <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-green-500 focus:dark:ring-green-500 hover:dark:ring-green-500 dark:text-gray-50">Submit Assignment </button>
+                        <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-indigo-500 focus:dark:ring-indigo-500 hover:dark:ring-indigo-500 dark:text-gray-50">Submit Assignment </button>
                     </div>
                 </form>
 

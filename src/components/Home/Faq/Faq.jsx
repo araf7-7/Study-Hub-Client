@@ -12,7 +12,7 @@ const Faq = () => {
     return (
         <div className="my-[200px]">
             <div >
-                <h1 className="text-xl  font-bold text-center mb-10"> <TypeAnimation
+                <h1 className="text-xl text-indigo-700 font-abc  font-bold text-center mb-10"> <TypeAnimation
                     sequence={[
                         // Same substring at the start will only be typed once, initially
                         'Frequently',
@@ -71,7 +71,7 @@ const Faq = () => {
                     </div>
                 </div>
                 <div>
-                    <Lottie animationData={FaQ} />
+                    <Lottie className="w-[500px] justify-center items-center lg:flex" animationData={FaQ} />
                 </div>
             </div>
         </div>

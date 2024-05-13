@@ -11,13 +11,13 @@ import Footer from './../Head&Foot/Footer';
 const Home = () => {
   const assignments = useLoaderData();
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>Home</title>
       </Helmet>
       <Banner></Banner>
       <div className="my-20">
-        <h1 className="text-center font-bold text-lg my-10"><TypeAnimation
+        <h1 className="text-center text-indigo-700 font-abc font-bold text-lg my-10"><TypeAnimation
           sequence={[
             // Same substring at the start will only be typed once, initially
             'Assi',

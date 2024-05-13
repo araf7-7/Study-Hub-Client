@@ -15,7 +15,7 @@ const FeatureCard = () => {
     return (
         <div >
             <div>
-                <h1 className="text-center text-xl font-bold">
+                <h1 className="text-center text-indigo-700 font-abc text-xl font-bold">
                 <TypeAnimation
                         sequence={[
                             // Same substring at the start will only be typed once, initially
@@ -31,9 +31,9 @@ const FeatureCard = () => {
                 </h1>
             </div>
             <div data-aos="fade-right" className="">
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4">
+                <div className="grid gap-4 mt-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4">
                     <div className="mx-auto max-w-[350px] space-y-4 rounded-lg  bg-teal-200 p-6 shadow-lg md:w-[350px]  text-black">
-                        <ImBooks className="text-5xl" />
+                        <ImBooks className="text-5xl " />
                         <div className="grid gap-2">
                             <h1 className="text-lg font-semibold ">Access a Wide Range of Assignments</h1>
                             <p className="text-sm text-gray-500 dark:text-black/60">Dive into a vast repository of assignments spanning various subjects and topics, carefully curated to cater to your academic needs. Whether you&apos;re studying mathematics, literature, or science, you&apos;ll find an extensive collection of assignments to help you excel in your studies.

@@ -8,6 +8,7 @@ export default {
     extend: {},
     fontFamily :{
       abc: ["PT Serif", "serif"],
+      bcd: ["Fira Sans" ,"serif"]
     }
   },
   plugins: [require("daisyui")],

@@ -45,7 +45,7 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
         });
     }
     return (
-        <div className="my-10 ">
+        <div className="my-10  ">
             <div>
                 <div className="lg:w-auto w-[400px]  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-3 py-4 shadow-2xl ">
                     {/* Card Image */}
@@ -57,7 +57,7 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
                     <div className="space-y-2 h-[120px]">
                         <div className="flex justify-between">
                             <h2 className="font-medium  sm:text-lg md:text-xl ">{name}</h2>
-                            <h2 className="font-bold rounded-lg p-1  bg-green-500">Marks : {marks}</h2>
+                            <h2 className="font-bold rounded-lg p-1  bg-indigo-500">Marks : {marks}</h2>
                         </div>
                         <h2 className="font-normal  text-sm  ">{description}</h2>
                     </div>

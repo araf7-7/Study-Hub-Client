@@ -22,12 +22,12 @@ const Assignments = () => {
 //     }
 // console.log(pages);
     return (
-        <div>
+        <div className="bg-indigo-100/70">
             <Helmet>
                 <title>Assignments</title>
             </Helmet>
             <div>
-                <h1 className="text-4xl text-center my-10">All Assignments Page</h1>
+                <h1 className="text-4xl text-center py-10">All Assignments Page</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center container mx-auto gap-10">
 
