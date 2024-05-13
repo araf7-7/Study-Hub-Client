@@ -38,11 +38,12 @@ const Header = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-indigo-400 rounded-box w-52 font-semibold">
                             <NavLink to="/" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700 p-2 rounded-lg">Home</NavLink>
+                            <NavLink to="/assignment" className="hover:text-indigo-700  hover:border-2  hover:border-indigo-700 p-2 rounded-lg">Assignments</NavLink>
 
                             {
                                 user ? (
                                     <>
-                                        <NavLink to="/assignment" className="hover:text-indigo-700  hover:border-2  hover:border-indigo-700 p-2 rounded-lg">Assignments</NavLink>
+
                                         <NavLink to="/CreateAssignment" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700 p-2 rounded-lg"> Create Assignments</NavLink>
                                         <NavLink to="/SubmittedAssignment" className="hover:text-indigo-700 hover:border-2 hover:border-indigo-700 p-2 rounded-lg"> Pending Assignments</NavLink>
                                     </>
@@ -56,8 +57,8 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="flex  justify-center item-center text-center">
-                        <img src="https://i.ibb.co/KFPxzWt/Brown-Modern-Education-Online-Course-Logo-removebg-preview.png" alt="" className="w-[100px] h-auto" />
-                        <h2 className="btn md:justify-end lg:justify-normal btn-ghost mt-6 text-2xl">StudyHub</h2>
+                        <img src="https://i.ibb.co/KFPxzWt/Brown-Modern-Education-Online-Course-Logo-removebg-preview.png" alt="" className="hidden lg:flex w-[100px] h-auto" />
+                        <h2 className="font-bold lg:pb-0  pb-6 justify-center items-center md:justify-end lg:justify-normal btn-ghost mt-6 text-2xl">StudyHub</h2>
                     </div>
                 </div>
 
@@ -68,13 +69,14 @@ const Header = () => {
                                 Home <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
                             </li>
                         </NavLink>
+                        <Link to='/assignment'>
+                            <li className="group flex  cursor-pointer flex-col">
+                                Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                        </Link>
                         {user ? (
                             <>
-                                <Link to='/assignment'>
-                                    <li className="group flex  cursor-pointer flex-col">
-                                        Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
-                                    </li>
-                                </Link>
+
                                 <Link to='/CreateAssignment'>
                                     <li className="group flex   cursor-pointer flex-col">
                                         Create Assignments <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
@@ -101,7 +103,7 @@ const Header = () => {
                     <div className="items-center  lg:flex">
                         {user ? (
                             <div className="flex gap-3">
-                                <div className="dropdown dropdown-end mx-auto flex lg:mr-10">
+                                <div className="dropdown dropdown-end mx-auto flex mr-0 lg:mr-10">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full">
 

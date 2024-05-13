@@ -26,7 +26,7 @@ const SubmittedAssignment = () => {
 
                 </SubmittedCard>
                 )}
-            </div>) : (<div className="flex justify-center items-center">
+            </div>) : (<div className="flex-col lg:flex justify-center items-center">
                 <img src="https://i.ibb.co/RDdKfFT/all-in-one-membership-software-solution.png" alt="No pending assignments" />
                 <h1 className="text-2xl font-abc font-bold">Nobody submitted any assignments</h1>
 

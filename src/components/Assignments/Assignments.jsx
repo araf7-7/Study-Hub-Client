@@ -1,26 +1,33 @@
 import { useLoaderData } from "react-router-dom";
 // import AssignmentCard from "../Home/AssignmentCard/AssignmentCard";
 import AllAssignmentsCard from "./AllAssignmentsCard";
-import {  useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 
 const Assignments = () => {
     const loadedAssignments = useLoaderData();
+    const [difficulty, setDifficulty] = useState('');
     const [assignments, setAssignments] = useState(loadedAssignments)
-//     const [count, setCount] = useState(1);
-//     useEffect(() => {
-//         fetch('http://localhost:5000/assignmentCount')
-//             .then(res => res.json())
-//             .then(data => setCount(data));
-//     }, [])
-//     const itemPerPage = 3
-//     const numberOfPages = Math.ceil(count / itemPerPage);
-//     const pages = []
-//     for (let i = 0; i < numberOfPages; i++) {
-//         pages.push(i)
-//     }
-// console.log(pages);
+    useEffect(() => {
+        fetch(`http://localhost:5000/assignmentsCreate?difficulty=${difficulty}`)
+            .then(res => res.json())
+            .then(res => setAssignments(res))
+    }, [difficulty])
+
+    //     const [count, setCount] = useState(1);
+    //     useEffect(() => {
+    //         fetch('http://localhost:5000/assignmentCount')
+    //             .then(res => res.json())
+    //             .then(data => setCount(data));
+    //     }, [])
+    //     const itemPerPage = 3
+    //     const numberOfPages = Math.ceil(count / itemPerPage);
+    //     const pages = []
+    //     for (let i = 0; i < numberOfPages; i++) {
+    //         pages.push(i)
+    //     }
+    // console.log(pages);
     return (
         <div className="">
             <Helmet>
@@ -28,6 +35,19 @@ const Assignments = () => {
             </Helmet>
             <div>
                 <h1 className="text-4xl text-center py-10">All Assignments Page</h1>
+            </div>
+            <div className="container mx-auto ">
+                <div className="flex gap-2 items-center justify-center">
+                    <h1 className="text-2xl">Filter :</h1>
+                    <select className="p-2 border-2 w-36 border-indigo-300 rounded" value={difficulty} onChange={(e) => setDifficulty(e.target.value)}>
+                        <option value="">All</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+
+
+                    </select>
+                </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center container mx-auto gap-10">
 

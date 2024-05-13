@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import UseAuth from "../UseAuth";
 
 
 const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
@@ -13,7 +14,8 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
         Aos.init({ duration: 3000 })
     }, [])
 
-    const { _id, img, name, description, marks, option } = assignment || {}
+    const { _id, img, name, description, marks, option, CreatorEmail, } = assignment || {}
+    const { user } = UseAuth()
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
@@ -26,11 +28,13 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
+                if (user.email !== CreatorEmail) {
+                    return Swal.fire({
+                        title: "Deleted!",
+                        text: "Youre Not eligible to delete this.",
+                        icon: "error"
+                    });
+                }
                 fetch(`http://localhost:5000/assignmentsCreate/${_id}`, {
                     method: 'DELETE'
                 })
@@ -49,12 +53,13 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
                     })
             }
         });
-        
+
     }
     return (
         <div className="my-10  ">
             <div>
-                <div data-aos="fade-up" className="lg:w-auto  w-[400px]  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-3 py-4 shadow-2xl ">
+                <div data-aos="fade-up" className="lg:w-auto md:w-auto w-[400px]  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-3 py-4 shadow-2xl ">
+
                     {/* Card Image */}
                     <img width={350} height={190} className="h-[190px] w-[350px]  container mx-auto rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
                     {/* Card Heading */}

@@ -16,13 +16,13 @@ const MyAssignment = () => {
   }, [user?.email]);
 
   return (
-    <div className="">
+    <div className="bg-indigo-300/70">
       <div className="text-4xl pt-10 text-center font-bold">
         My Assignments
       </div>
       {assignments.length > 0 ? (
         <div className=" py-10">
-          <div className="grid  gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg gap-10">
             {assignments.map((assignment) => (
               <MyAssignmentCard
                 key={assignment.email}

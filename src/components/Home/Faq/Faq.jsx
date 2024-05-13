@@ -71,7 +71,7 @@ const Faq = () => {
                     </div>
                 </div>
                 <div>
-                    <Lottie className="w-[500px] justify-center items-center lg:flex" animationData={FaQ} />
+                    <Lottie className="md:w-auto lg:w-[500px] justify-center items-center lg:flex" animationData={FaQ} />
                 </div>
             </div>
         </div>

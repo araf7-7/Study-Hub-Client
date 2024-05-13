@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select'
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import UseAuth from "../UseAuth";
 const options = [
     { value: 'easy', label: 'Easy' },
     { value: 'medium', label: 'Medium' },
@@ -14,6 +15,7 @@ const options = [
 
 const CreateAssignments = () => {
     const navigate = useNavigate();
+    const {user} = UseAuth()
     const handleAddAssignment = event => {
         event.preventDefault();
 
@@ -25,7 +27,7 @@ const CreateAssignments = () => {
         const option = form.option.value;
         const date = form.date.value;
 
-        const newAssignment = { name, description, marks, img, option, date }
+        const newAssignment = { name, description, marks, img, option, date , CreatorEmail:user.email }
         console.log(newAssignment);
 
         fetch('http://localhost:5000/assignmentsCreate', {

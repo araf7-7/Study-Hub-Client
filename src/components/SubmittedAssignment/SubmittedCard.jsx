@@ -45,14 +45,14 @@ const SubmittedCard = ({ submit, refetch, SetRefetch }) => {
     return (
         <div className="">
             <div className="">
-                <div className="w-full max-w-md px-8 py-4  bg-gradient-to-r from-indigo-700  text-white to-sky-500 rounded-lg shadow-lg">
-                    <h2 className="mt-2 text-xl font-semibold  md:mt-0">{assignmentName}</h2>
-                    <p className="mt-2 font-medium  text-sm">Examinee Name: {name}</p>
-                    <p className="mt-2 font-medium text-sm ">Note: {note}</p>
-                    <p className="mt-2 font-medium text-sm ">Total Marks: {assignmentMark}</p>
+                <div className="w-[800px]  px-8 py-4  bg-gradient-to-r from-indigo-700  text-white to-sky-500 rounded-lg shadow-lg">
+                    <h2 className="mt-2 text-2xl font-semibold  md:mt-0">{assignmentName}</h2>
+                    <p className="mt-2 font-medium  text-lg">Examinee Name: {name}</p>
+                    <p className="mt-2 font-medium text-lg">Note: {note}</p>
+                    <p className="mt-2 font-medium text-lg ">Total Marks: {assignmentMark}</p>
                     <div className="flex mt-2 justify-end gap-4">
-                        <button onClick={() => setShowPreview(true)} className="btn transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none border-0 bg-lime-800 hover:bg-lime-600 text-white">Preview</button>
-                        <button onClick={openModal} className="btn transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none border-0 bg-lime-800 hover:bg-lime-600 text-white">Give Mark</button>
+                        <button onClick={() => setShowPreview(true)} className="btn transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none border-0 bg-indigo-400 hover:bg-indigo-600 text-white">Preview</button>
+                        <button onClick={openModal} className="btn transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none border-0 bg-indigo-400 hover:bg-indigo-600 text-white">Give Mark</button>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@ const SubmittedCard = ({ submit, refetch, SetRefetch }) => {
                             <h3 className="font-bold mb-2 text-lg">Submitted Link: <a className="underline text-red-600 font-abc">{doc}</a></h3>
                             <h3 className="font-bold mb-2 text-lg">Examinee Note: <a className="font-abc text-red-600">{note}</a></h3>
                             <div className="flex gap-2 items-center justify-center">
-                                <textarea className="textarea h-10 bg-indigo-100 w-full" name="obtainedMark" placeholder="Give Marks" required></textarea>
+                                <input type='number' className="textarea h-10 bg-indigo-100 w-full" name="obtainedMark" placeholder="Give Marks" required></input>
                                 <p className="bg-red-500  p-3 rounded-md font-semibold text-center">/{assignmentMark}</p>
                             </div>
                             <textarea className="textarea bg-indigo-100 w-full mt-2" name="feedback" placeholder="Feedback"></textarea>
