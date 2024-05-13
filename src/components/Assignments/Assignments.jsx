@@ -22,7 +22,7 @@ const Assignments = () => {
 //     }
 // console.log(pages);
     return (
-        <div className="bg-indigo-100/70">
+        <div className="">
             <Helmet>
                 <title>Assignments</title>
             </Helmet>

@@ -56,7 +56,7 @@ const CreateAssignments = () => {
             <Helmet>
                 <title>Create Assignments</title>
             </Helmet>
-            <section className="p-6 bg-indigo-100/70 dark:text-gray-800">
+            <section className="p-6  dark:text-gray-800">
                 <form onSubmit={handleAddAssignment} noValidate="" className="container bg-indigo-300/90 w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow ">
                     <h2 className="w-full text-3xl font-bold leading-tight">Create An Assignment</h2>
                     <div>

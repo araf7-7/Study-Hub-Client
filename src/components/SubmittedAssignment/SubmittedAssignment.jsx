@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import SubmittedCard from "./SubmittedCard";
+import Footer from "../Head&Foot/Footer";
 
 
 
@@ -15,28 +16,23 @@ const SubmittedAssignment = () => {
     }, [refetch])
     console.log('asdas', submits);
     return (
-        <div className="">
+        <><div className=" py-4">
             <div>
-                <h1 className="text-4xl text-center my-4">Submitted Assignments </h1>
+                <h1 className="text-4xl text-center mb-20 font-bold ">Submitted Assignments </h1>
             </div>
             {submits.length > 0 ? (<div className=" grid  justify-center  items-center">
 
-                {
-                    submits?.map(submit =>
-                        <SubmittedCard key={submit._id} refetch={refetch} SetRefetch={SetRefetch} submit={submit}>
+                {submits?.map(submit => <SubmittedCard key={submit._id} refetch={refetch} SetRefetch={SetRefetch} submit={submit}>
 
-                        </SubmittedCard>
-                    )
-                }
+                </SubmittedCard>
+                )}
             </div>) : (<div className="flex justify-center items-center">
-                <img src="https://i.ibb.co/QrhB74h/trendy-flat-of-project-complete-vector-43524971-removebg-preview.png" alt="No pending assignments" />
+                <img src="https://i.ibb.co/RDdKfFT/all-in-one-membership-software-solution.png" alt="No pending assignments" />
                 <h1 className="text-2xl font-abc font-bold">You did not submitted any assignments</h1>
 
-            </div>)
+            </div>)}
 
-            }
-
-        </div>
+        </div><Footer /></>
     );
 };
 

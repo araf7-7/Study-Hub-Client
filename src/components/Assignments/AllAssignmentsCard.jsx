@@ -3,9 +3,15 @@ import { GrUpdate, GrView } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 
 const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
+    useEffect(() => {
+        Aos.init({ duration: 3000 })
+    }, [])
 
     const { _id, img, name, description, marks, option } = assignment || {}
     const handleDelete = _id => {
@@ -43,11 +49,12 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
                     })
             }
         });
+        
     }
     return (
         <div className="my-10  ">
             <div>
-                <div className="lg:w-auto w-[400px]  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-3 py-4 shadow-2xl ">
+                <div data-aos="fade-up" className="lg:w-auto  w-[400px]  h-auto  text-black mx-auto space-y-6 rounded-2xl    px-3 py-4 shadow-2xl ">
                     {/* Card Image */}
                     <img width={350} height={190} className="h-[190px] w-[350px]  container mx-auto rounded-2xl bg-gray-400" src={img} alt="card navigate ui" />
                     {/* Card Heading */}

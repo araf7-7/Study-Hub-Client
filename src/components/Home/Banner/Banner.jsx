@@ -28,7 +28,7 @@ const Banner = () => {
                             repeat={Infinity}
                         /></p>
                         <Fade>
-                            <p className='bannerText md:text-2xl text-white p-4 md:mt-5'>StudyHub is your ultimate destination for academic excellence. With StudyHub, students can access a vast repository of assignments spanning various subjects and difficulty levels, empowering them.</p>
+                            <p className='bannerText md:text-2xl text-white p-4 md:mt-5'><span className="text-lime-300">StudyHub</span> is your ultimate destination for academic excellence. With StudyHub, students can access a vast repository of assignments spanning various subjects and difficulty levels, empowering them.</p>
                         </Fade>
 
 

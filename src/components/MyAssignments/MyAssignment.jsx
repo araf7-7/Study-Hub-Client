@@ -16,8 +16,8 @@ const MyAssignment = () => {
   }, [user?.email]);
 
   return (
-    <div>
-      <div className="text-4xl text-center font-bold">
+    <div className="">
+      <div className="text-4xl pt-10 text-center font-bold">
         My Assignments
       </div>
       {assignments.length > 0 ? (

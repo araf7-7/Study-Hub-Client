@@ -1,17 +1,17 @@
 
 
 const MyAssignmentCard = ({ assignment }) => {
-    const {  note, submittedOn, assignmentName, status, obtainedMark } = assignment || {};
+    const {   submittedOn, assignmentName, status, obtainedMark,feedback } = assignment || {};
     return (
-        <div className="w-[max-content] mx-auto">
-            <div className=" mx-auto space-y-6 rounded-2xl bg-gradient-to-r from-green-500 to-lime-500 px-6 py-4 shadow-md">
-                <h1 className="text-xl"> <span className="font-bold">Assignment Name :</span> {assignmentName}</h1>
-                <h1 className="text-xl"> <span className="font-bold">Submitted On :</span> {submittedOn}</h1>
-                <h1 className="text-xl"> <span className="font-bold">Note : </span>{note}</h1>
-                <h1 className="text-xl"> <span className="font-bold">Status :</span> {status}</h1>
-                <h1 className="text-xl"> <span className="font-bold">Obtained Mark :</span> {obtainedMark}</h1>
-                
+        <div className="w-[500px] mx-auto font-abc">
+            <div className=" mx-auto space-y-6 rounded-2xl bg-gradient-to-r from-indigo-700  text-white to-sky-500 px-6 py-4 shadow-md">
+                <h1 className="text-xl"> <span className="font-bold">Assignment Name :</span> <span className= " font-bold text-yellow-400 text">{assignmentName}</span></h1>
+                <h1 className="text-xl"> <span className="font-bold">Submitted On :</span><span className= " font-bold text-yellow-400" > {submittedOn}</span></h1>
+                <h1 className="text-xl"> <span className="font-bold">Feedback : </span> <span className= " font-bold text-yellow-400">{feedback}</span></h1>
+                <h1 className="text-xl"> <span className="font-bold">Status :</span> <span className= " font-bold text-yellow-400">{status}</span></h1>
+                <h1 className="text-xl"> <span className="font-bold">Obtained Mark :</span> <span className= " font-bold text-yellow-400">{obtainedMark}</span></h1>
             </div>
+            
         </div>
     );
 };
