@@ -7,7 +7,7 @@ const MyAssignment = () => {
   const [assignments, setAssignments] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/submit/${user?.email}`)
+    fetch(`https://assignment-11-server-tawny-nine.vercel.app/submit/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAssignments(data))
       .catch((error) => {
@@ -34,15 +34,15 @@ const MyAssignment = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <img src="https://i.ibb.co/QrhB74h/trendy-flat-of-project-complete-vector-43524971-removebg-preview.png" alt="No pending assignments" />
           <h1 className="text-2xl font-abc font-bold">You did not submitted any assignments</h1>
-         
+
         </div>
       )}
       <Footer></Footer>
     </div>
-    
+
   );
 };
 

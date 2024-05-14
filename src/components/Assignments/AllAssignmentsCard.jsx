@@ -35,7 +35,7 @@ const AllAssignmentsCard = ({ assignment, assignments, setAssignments }) => {
                         icon: "error"
                     });
                 }
-                fetch(`http://localhost:5000/assignmentsCreate/${_id}`, {
+                fetch(`https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

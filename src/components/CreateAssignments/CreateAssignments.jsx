@@ -15,7 +15,7 @@ const options = [
 
 const CreateAssignments = () => {
     const navigate = useNavigate();
-    const {user} = UseAuth()
+    const { user } = UseAuth()
     const handleAddAssignment = event => {
         event.preventDefault();
 
@@ -27,10 +27,10 @@ const CreateAssignments = () => {
         const option = form.option.value;
         const date = form.date.value;
 
-        const newAssignment = { name, description, marks, img, option, date , CreatorEmail:user.email }
+        const newAssignment = { name, description, marks, img, option, date, CreatorEmail: user.email }
         console.log(newAssignment);
 
-        fetch('http://localhost:5000/assignmentsCreate', {
+        fetch('https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

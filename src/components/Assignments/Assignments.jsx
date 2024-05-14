@@ -10,14 +10,14 @@ const Assignments = () => {
     const [difficulty, setDifficulty] = useState('');
     const [assignments, setAssignments] = useState(loadedAssignments)
     useEffect(() => {
-        fetch(`http://localhost:5000/assignmentsCreate?difficulty=${difficulty}`)
+        fetch(`https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate?difficulty=${difficulty}`)
             .then(res => res.json())
             .then(res => setAssignments(res))
     }, [difficulty])
 
     //     const [count, setCount] = useState(1);
     //     useEffect(() => {
-    //         fetch('http://localhost:5000/assignmentCount')
+    //         fetch('https://assignment-11-server-tawny-nine.vercel.app/assignmentCount')
     //             .then(res => res.json())
     //             .then(data => setCount(data));
     //     }, [])

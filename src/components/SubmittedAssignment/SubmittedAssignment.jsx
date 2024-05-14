@@ -10,7 +10,7 @@ const SubmittedAssignment = () => {
     const [refetch, SetRefetch] = useState(false);
     const [submits, SetSubmits] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/pending`)
+        fetch(`https://assignment-11-server-tawny-nine.vercel.app/pending`)
             .then(res => res.json())
             .then(res => SetSubmits(res))
     }, [refetch])
@@ -26,7 +26,7 @@ const SubmittedAssignment = () => {
 
                 </SubmittedCard>
                 )}
-            </div>) : (<div className="flex-col lg:flex justify-center items-center">
+            </div>) : (<div className="flex-col flex lg:flex-row justify-center items-center">
                 <img src="https://i.ibb.co/RDdKfFT/all-in-one-membership-software-solution.png" alt="No pending assignments" />
                 <h1 className="text-2xl font-abc font-bold">Nobody submitted any assignments</h1>
 

@@ -1,4 +1,5 @@
 import { FaPenAlt } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
 import { GoNumber } from "react-icons/go";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
@@ -26,10 +27,16 @@ const ViewAssignments = () => {
                                 <p className="text-xl  ">  <span className="font-medium ">Marks:</span> {assignments.marks}</p>
                             </div>
                         </div>
-                        <p className="text-xl "><span className="font-medium">Description:</span> {assignments.description}</p>
-
-                        <p className="text-xl "><span className="font-medium">Difficulty:</span> {assignments.option}</p>
-                        <p className="text-xl "><span className="font-medium">Date:</span> {assignments.date}</p>
+                       <div className="flex gap-2 items-center">
+                       <FaArrowRight className="lg:mb-6 text-2xl"/><p className="text-xl "><span className="font-medium">Description:</span> {assignments.description}</p>
+                       </div>
+                       
+                        <div className="flex items-center gap-2">
+                        <FaArrowRight className="text-xl" /><p className="text-xl "><span className="font-medium">Difficulty:</span> {assignments.option}</p>
+                        </div>
+                       <div className="flex items-center gap-2">
+                       <FaArrowRight className="text-xl" /><p className="text-xl "><span className="font-medium">Date:</span> {assignments.date}</p>
+                       </div>
                         <Link to={`/TakeAssignment/${id}`}><button className="btn text-black hover:bg-indigo-700 bg-indigo-500 btn-block">Take Assignments <FaPenAlt className="text-xl" /></button></Link>
                     </div>
                 </div>

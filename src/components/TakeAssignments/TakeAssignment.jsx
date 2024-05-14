@@ -44,7 +44,7 @@ const TakeAssignment = () => {
         const submitAssignment = { status: 'Pending', feedback: '', obtainedMark: 0, doc, note, name, email, assignmentName: assignments.name, assignmentMark: assignments.marks, submittedOn: date, };
         console.log(submitAssignment)
 
-        fetch('http://localhost:5000/submit', {
+        fetch('https://assignment-11-server-tawny-nine.vercel.app/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

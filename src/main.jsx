@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>,
-          loader: () => fetch('http://localhost:5000/assignmentsCreate')
+          loader: () => fetch('https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate')
         },
         {
           path: "/login",
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
 
           path: "/assignment",
           element: <Assignments></Assignments>,
-      
+
         },
         {
 
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
 
           path: "/MyAssignment",
           element: <PrivateRoute>
-          <MyAssignment></MyAssignment>
+            <MyAssignment></MyAssignment>
           </PrivateRoute>,
         },
         {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
           element: <PrivateRoute>
             <Update></Update>
           </PrivateRoute>,
-           loader: ({params}) => fetch(`http://localhost:5000/assignmentsCreate/${params.id}`)
+          loader: ({ params }) => fetch(`https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate/${params.id}`)
         },
         {
 
@@ -77,21 +77,21 @@ const router = createBrowserRouter([
           element: <PrivateRoute>
             <ViewAssignments></ViewAssignments>
           </PrivateRoute>,
-           loader: () => fetch(`http://localhost:5000/assignmentsCreate`)
+          loader: () => fetch(`https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate`)
         },
         {
 
           path: "/TakeAssignment/:id",
           element: <PrivateRoute>
-          <TakeAssignment></TakeAssignment>
+            <TakeAssignment></TakeAssignment>
           </PrivateRoute>,
-           loader: () => fetch(`http://localhost:5000/assignmentsCreate`)
+          loader: () => fetch(`https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate`)
         },
         {
 
           path: "/SubmittedAssignment",
           element: <PrivateRoute>
-         <SubmittedAssignment></SubmittedAssignment>
+            <SubmittedAssignment></SubmittedAssignment>
           </PrivateRoute>,
         },
       ]

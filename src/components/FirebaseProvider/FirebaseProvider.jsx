@@ -54,7 +54,7 @@ const FirebaseProvider = ({ children }) => {
             setLoading(false)
             if (user) {
                 const loggedUser = { email: user.email }
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://assignment-11-server-tawny-nine.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('token response', res.data);
                     })

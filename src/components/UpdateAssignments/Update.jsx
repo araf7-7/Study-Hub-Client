@@ -25,7 +25,7 @@ const Update = () => {
         const updatedAssignment = { name, description, marks, img }
         console.log(updatedAssignment);
 
-        fetch(`http://localhost:5000/assignmentsCreate/${_id}`, {
+        fetch(`https://assignment-11-server-tawny-nine.vercel.app/assignmentsCreate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

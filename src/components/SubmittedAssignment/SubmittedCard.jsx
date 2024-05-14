@@ -23,7 +23,7 @@ const SubmittedCard = ({ submit, refetch, SetRefetch }) => {
         console.log(updatedMarks);
 
 
-        fetch(`http://localhost:5000/submit/${_id}`, {
+        fetch(`https://assignment-11-server-tawny-nine.vercel.app/submit/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,12 +33,12 @@ const SubmittedCard = ({ submit, refetch, SetRefetch }) => {
             .then(res => res.json)
             .then(data => {
                 console.log(data)
-                
-                    toast.success('Marks Given Successfully')
-                    setShowModal(false)
-                    SetRefetch(!refetch)
 
-              
+                toast.success('Marks Given Successfully')
+                setShowModal(false)
+                SetRefetch(!refetch)
+
+
             })
     }
 

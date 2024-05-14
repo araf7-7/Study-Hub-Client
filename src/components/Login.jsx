@@ -113,7 +113,7 @@ const Login = () => {
                                         <circle cx="8.5" cy="7" r="4" />
                                         <path d="M20 8v6M23 11h-6" />
                                     </svg>
-                                    <span className="ml-3">Sign Up</span>
+                                    <span className="ml-3">Login</span>
                                 </button>
                             </form>
                             <p className="text-xs  my-2 text-center sm:px-6 dark:text-gray-600">Dont have an account?
