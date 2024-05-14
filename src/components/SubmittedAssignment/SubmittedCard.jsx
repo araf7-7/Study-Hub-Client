@@ -45,7 +45,7 @@ const SubmittedCard = ({ submit, refetch, SetRefetch }) => {
     return (
         <div className="">
             <div className="">
-                <div className="w-[800px]  px-8 py-4  bg-gradient-to-r from-indigo-700  text-white to-sky-500 rounded-lg shadow-lg">
+                <div className="w-auto md:w-auto lg:w-[800px]  px-8 py-4  bg-gradient-to-r from-indigo-700  text-white to-sky-500 rounded-lg shadow-lg">
                     <h2 className="mt-2 text-2xl font-semibold  md:mt-0">{assignmentName}</h2>
                     <p className="mt-2 font-medium  text-lg">Examinee Name: {name}</p>
                     <p className="mt-2 font-medium text-lg">Note: {note}</p>
